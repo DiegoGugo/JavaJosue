@@ -6,6 +6,7 @@ package Servlet;
  * and open the template in the editor.
  */
 import Clases.Perro;
+import Clases.Producto;
 import Clases.Usuario;
 import Clases.UsuarioBD;
 import Conexion.Conexion;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -47,6 +49,8 @@ public class Cliente extends HttpServlet {
             login(request, response);
         } else if (ac.equals("registrarM")) {
             regisrarM(request, response);
+        } else if (ac.equals("obtenerP")) {
+            productosDisponibles(request, response);
         }
 
         //
@@ -217,9 +221,6 @@ public class Cliente extends HttpServlet {
 
             }
         } else {
-            Connection cn;
-            Conexion con = new Conexion();
-            cn = con.conectar();
             Usuario usu = UsuarioBD.VerificarUsuario(correo);
             System.out.println(usu.getCor());
             if (correo.equals(usu.getCor())) {
@@ -276,7 +277,7 @@ public class Cliente extends HttpServlet {
             String nacimiento = request.getParameter("fecha");//aaaa-mm-dd
             String genero = request.getParameter("generop");
             String talla = request.getParameter("tallap");
-            InputStream inputStream=null;
+            InputStream inputStream = null;
             try {
                 Part filePart = request.getPart("imagenp");
                 if (filePart.getSize() > 0) {
@@ -293,7 +294,7 @@ public class Cliente extends HttpServlet {
                     || (nacimiento.equals(""))
                     || (genero.equals(""))
                     || (talla.equals(""))
-                    || (inputStream==null)) {
+                    || (inputStream == null)) {
 
                 if (place.equals("pag")) {
                     System.out.println("Respuesta pagina");
@@ -319,32 +320,41 @@ public class Cliente extends HttpServlet {
                 pe.setCodigos(0);
                 pe.setDueno(correo);
                 pe.setArchivoimg(inputStream);
-                
+
                 UsuarioBD u = new UsuarioBD();
                 boolean registrado = u.registrarMascota(pe);
-                    //En caso de que se haya podido registrar
-                    if (registrado == true) {
+                //En caso de que se haya podido registrar
+                if (registrado == true) {
 
-                        //Peticion hecha desde la pagina
-                        if (place.equals("pag")) {
-                            String men = "Registro correcto";
-                            response.sendRedirect("JSP/RegistrarMascota.jsp?mens=" + men);
+                    //Peticion hecha desde la pagina
+                    if (place.equals("pag")) {
+                        String men = "Registro correcto";
+                        response.sendRedirect("JSP/RegistrarMascota.jsp?mens=" + men);
 
-                            //Peticion hecha desde la app    
-                        } else if (place.equals("app")) {
-                            //Codigo xdxd
-                        }
-                        //En caso de que no se haya podido registrar    
-                    } else {
-                        if (place.equals("pag")) {
-                            String men = "Error al registrar";
-                            response.sendRedirect("JSP/RegistroUsuario.jsp?mens=" + men);
-                        } else if (place.equals("app")) {
-                            //Codigo de la app
-                        }
+                        //Peticion hecha desde la app    
+                    } else if (place.equals("app")) {
+                        //Codigo xdxd
                     }
+                    //En caso de que no se haya podido registrar    
+                } else {
+                    if (place.equals("pag")) {
+                        String men = "Error al registrar";
+                        response.sendRedirect("JSP/RegistroUsuario.jsp?mens=" + men);
+                    } else if (place.equals("app")) {
+                        //Codigo de la app
+                    }
+                }
             }
         }
     }
-
+//Este metodo solo se ocupa en la app, ya que la consulta de los producto se hace en el jsp de Servicios
+    private void productosDisponibles(HttpServletRequest request, HttpServletResponse response) {
+        //UsuarioBD u = new UsuarioBD();
+        ArrayList<Producto> pros = UsuarioBD.obtenerProductos();
+        
+        //Respuesta por la peticion de la app, 
+        if(request.getParameter("place")=="app"){
+           //Enviar arraylist obtenida como json 
+        }
+    }
 }

@@ -10,6 +10,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -107,4 +108,28 @@ public class UsuarioBD {
         }
         return resp;
     }
+    public static ArrayList<Producto> obtenerProductos(){
+        Connection cn;
+        Conexion con = new Conexion();
+        cn = con.conectar();
+        ArrayList<Producto> obtenido = new ArrayList();
+        try {
+            PreparedStatement ps = cn.prepareStatement("SELECT (nom_art,des_art,fot_art,pre_art,exi_art) FROM usuario WHERE (exi_art > 0)");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                Producto pro = new Producto();
+                pro.setNombre(rs.getString("nom_art"));
+                pro.setDes(rs.getString("des_art"));
+                //convertir blob a inputStream
+                //pro.setFoto(rs.getBlob("fot_art"));
+                pro.setPrecio(rs.getFloat("pre_art"));
+                obtenido.add(pro);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return obtenido;
+    }   
 }

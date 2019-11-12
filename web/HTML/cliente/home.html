@@ -13,10 +13,10 @@ and open the template in the editor.
     <body>
         <script>
             function registrar() {
-                window.location = '../../JSP/RegistrarMascota.jsp';
+                window.location = 'home.html';
             }
             function servicio() {
-                window.location = '../../JS/Sesion/Servicios.jsp';
+                window.location = '../../JSP/Servicios.jsp';
 
             }
             function citas() {
@@ -24,21 +24,31 @@ and open the template in the editor.
 
             }
             function salir() {
-               window.location="../../index.html";
-            alert("vuelve pronto");
+                window.location = "../../index.html";
+                alert("vuelve pronto");
             }
-
-
+            function miPerfil(){
+                window.location=""
+            }
+                
+                
+            
         </script>
         <div>HOLIWIS KIWIS</div>
         <h1>¿Que deseas hacer?</h1>
-        <input type='button' value="Registrar mascota" onClick="registrar()">
-        <br><br><br>
-        <input type='button' value="Pedir servicio" onClick="servicio()">
-        <br><br><br>
-        <input type='button' value="Ver mis citas" onClick="">
-        <br><br><br>
-        <a href="../../Cliente">Cerrar sesion</a><br>
+        <header>
+            <input type='button' value="Mis mascotas" onClick='location.href="home.html"'>
+            <br><br><br>
+            <input type='button' value="Servicios" onClick="location.href='../../JSP/Servicios.jsp'">
+            <br><br><br>
+            <input type='button' value="Mi perfil" onClick="miPerfil()">
+            <br><br><br>
+            <input type='button' value="Notificaciones" onClick="notifi()">
+            <br><br><br>
+            <a href="../../Cliente">Cerrar sesion</a><br>
+        </header>
+        
+
 
     </body>
 </html>
