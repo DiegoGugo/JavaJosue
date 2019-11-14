@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+body{
+    font-family: 'PT Sans Narrow', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    letter-spacing: 2.5px
+}
+
+.section__titulo{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(190, 15, 15);
+}
+
+.contenedor{
+    margin: auto;
+    width: 99%;
+}
+
+/*---------------------ESTILOS DEL HEADER---------------------*/
+
+.header{
+    height: 60px;
+}
+
+.header .contenedor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo, .icon-menu{
+    margin: 5px;
+    color: rgb(221, 18, 18);
+}
+
+.icon-menu{
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: rgb(201, 9, 9);
+    color: cornsilk;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/*---------------------ESTILOS DEL MENU---------------------*/
+
+.nav{
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__link{
+    display: block;
+    padding: 15px;
+    background: rgb(199, 42, 14);
+    text-decoration: none;
+    color: rgb(10, 9, 5);
+}
+
+.menu__link:hover, .select{
+    background: rgb(252, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.mostrar{
+    left: 0;
+}
+
+/*---------------------ESTILOS DEL BANNER---------------------*/
+
+.banner{
+    margin-top: -60px;
+    position: relative;
+    z-index: -1000;
+	margin-bottom: 30px;
+	background-color: transparent;
+	background: -webkit-linear-gradient(to right, hsla(339, 16%, 67%, 0.459), hsla(318, 15%, 60%, 0.664)), url(../img/banner2.0.jpg);
+    background: linear-gradient(to right, hsla(342, 13%, 70%, 0.459), hsla(317, 24%, 70%, 0.664)), url(../img/banner2.0.jpg);
+    background-size: relative;
+	background-attachment: fixed;
+	width: 100%;
+    height: 600px;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.banner .contenedor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    color: rgb(10, 9, 2);
+    text-align: center; 
+}
+
+.banner__txt{
+    display: none;
+}
+
+/*---------------------ESTILOS DE INFO---------------------*/
+
+.info__columna{
+    color: cornsilk;
+    padding: 15px;
+    margin-bottom: 30px;    
+}
+
+
+/*---------------------ESTILOS DE EMPRESA---------------------*/
+
+.empresa__columna{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.empresa__descripcion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    color: cornsilk;
+    background: rgba(0,0,0,0.6);
+    width: 500px;
+    padding: 10px;
+}
+
+.empresa__titulo{
+    font-size: 21px;
+    margin: 0px 0;
+}
+
+.empresa__img{
+    width: 100%;
+}
+
+.info__img{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*---------------------ESTILOS DE PIE---------------------*/
+
+.footer{
+    background: #333;
+    color: cornsilk;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer .social [class^="icon-"]{
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px;
+    background: cornsilk;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+}
+
+/*---------------------ESTILOS RESPONSIVE---------------------*/
+
+@media(min-width:480px){
+    .logo{
+        font-size: 40px;
+    }
+    .banner__titulo{
+        font-size: 30px;
+    }
+    .banner__txt{
+        display: block;
+        font-size: 20px;
+    }
+    .info, .empresa{
+        display: flex;
+        justify-content: space-between;
+        margin-top: -230px;
+    }
+    .info__columna{
+        width: 19.5%;
+    }
+    .empresa{
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+    .section__titulo{
+        width: 100%;
+    }
+    .empresa__columna{
+        width: 49%;
+    }
+}
+
+@media(min-width:768px){
+    .banner__titulo{
+        font-size: 40px;
+    }
+    .empresa__titulo{
+        font-size: 30px;
+    }
+}
+
+@media(min-width:1024px){
+    .contenedor{
+         width:1300px;;
+    }
+    .nav{
+        position: static;
+        width: auto;
+    }
+    .menu{
+        display: flex
+    }
+    .menu__link{
+        background: none;
+        font-size: 20px;
+    }
+    .select{
+        background: rgb(219, 18, 18);
+        color: rgb(255, 255, 255);
+    }
+    .icon-menu{
+        display: none;
+    }
+    .banner__titulo{
+        font-size: 40px;
+    }
+    .info__titulo{
+        text-align: center;
+    }
+    .empresa__titulo{
+        font-size: 30px;
+    }
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+.tarjeta-wrap{
+	margin: 10px;
+	-webkit-perspective: 800;
+	perspective: 800;
+}
+
+.tarjeta{
+	width: 200px;
+	height: 350px;
+    background: rgb(204, 24, 24);
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: .7s ease;
+	transition: .7s ease;
+	-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+
+}
+
+.adelante {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #ffffff;
+}
+.atras{
+    width: 100%;
+    background-color: #ffffff;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.adelante{
+
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.atras{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-family: "open sans";
+}
+
+.tarjeta-wrap:hover .tarjeta{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.adelante1{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color:rgb(255, 255, 255);
+}
+.atras1{
+    width: 100%;
+    background-color:rgb(255, 255, 255);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.adelante1{
+
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.atras1{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-family: "open sans";
+}
+
+.adelante2{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: rgb(255, 255, 255);
+}
+.atras2{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.adelante2{
+ 
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.atras2{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-family: "open sans";
+}
+
+.adelante3{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: rgb(255, 255, 255);
+}
+.atras3{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.adelante3{
+
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.atras3{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-family: "open sans";
+}
+
+.adelante4{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: rgb(255, 255, 255);
+}
+.atras4{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.adelante4{
+  
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.atras4{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-family: "open sans";
+}
+
+/*-----------------------Estilo Header Empleado-------------------------------------*/
+
+.submenu{
+	position: absolute;
+	background: #333333;
+	width: 120%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+/*-------------------------------------TABLA----------------------------------------------*/
+
+#main-container{
+	margin: 150px auto;
+	width: 600px;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+	position: -webkit-sticky;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #f74028;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #e68516;
+	color: white;
+}
+
+/*-------------------------------------RegistroUsuario----------------------------------*/
+
+form {
+
+    display: inline-block;
+
+    text-align: center;
+
+}

@@ -6,11 +6,38 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Iniciar Sesion</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Registrar</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="Css/Estilos.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link href="https://file.myfontastic.com/mqb57Y99DoZRtKZYZ7jXPD/icons.css" rel="stylesheet">
+		<link rel="icon" href="Img/Techno-bit.png">
     </head>
     <body>
+
+            <header class="header">
+                    <div class="contenedor">
+                        <h1 class="logo">Can-Contento</h1>
+                        <span class="icon-menu" id="btn-menu"></span>
+                        <nav class="nav" id="nav">
+                        <ul class="menu">
+                            <li class="menu__item"><a class="menu__link select" href="index.html">Inicio</a>
+                                <ul class="submenu">
+                                    <li class="menu__item"><a class="menu__link" herf=""></a>   Perfil   </li> 
+                                    <li class="menu__item"><a class="menu__link" herf="">Reportar Problema</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu__item"><a class="menu__link" href="SesionUsuario.html">¿Ya tienes cuenta? Inicia Sesion</a></li>
+                            <li class="menu__item"><a class="menu__link" href="">                   </a></li>
+                               <li class="menu__item"><a class="menu__link" href="">                   </a></li>
+                        </ul>
+                        </nav>
+                    </div>
+            </header>
+        
         <script>
             function Registro_Exitoso() {
                 window.location = '../../index.html';
@@ -26,7 +53,8 @@ and open the template in the editor.
             }
 
         </script>
-        <form action="..\Cliente" method="post">
+        <dib class="form">
+        <form action="..\Cliente" method="post" aling="">
             <h1>Llena los siguientes campos</h1>
             <br><br>
             <h3>Nombre</h3>
@@ -47,7 +75,7 @@ and open the template in the editor.
             <input type="hidden" value="alta" name="accion">
             <input type="hidden" value="pag" name="place">
             <input type=submit value="Aceptar">
-
         </form>
+        </dib>
     </body>
 </html>

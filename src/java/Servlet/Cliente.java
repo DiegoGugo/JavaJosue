@@ -22,6 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -129,7 +131,20 @@ public class Cliente extends HttpServlet {
 
                 //Respuesta en caso de que la app haya hecho la peticion    
             } else if (place.equals("app")) {
-                //Codigo que aun no he hecho xd
+                System.out.println("Campos vacios app registro");
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("Registro", "FalloV");
+                    PrintWriter pw = response.getWriter();
+                    pw.write(jsonObject.toString());
+                    pw.print(jsonObject.toString());
+
+                    System.out.println("Registro vacio" + jsonObject.toString());
+
+                } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
 
             }
             // Campos NO vacios
@@ -159,7 +174,20 @@ public class Cliente extends HttpServlet {
 
                             //Peticion hecha desde la app    
                         } else if (place.equals("app")) {
-                            //Codigo xdxd
+                            System.out.println("Registro correto app");
+                            JSONObject jsonObject = new JSONObject();
+                            try {
+                                jsonObject.put("Registro", "Correcto");
+                                PrintWriter pw = response.getWriter();
+                                pw.write(jsonObject.toString());
+                                pw.print(jsonObject.toString());
+
+                                System.out.println("Registro correcto" + jsonObject.toString());
+
+                            } catch (JSONException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
                         }
                         //En caso de que no se haya podido registrar    
                     } else {
@@ -167,7 +195,20 @@ public class Cliente extends HttpServlet {
                             String men = "Error al registrar, verifica que el usuario no sea repetido";
                             response.sendRedirect("JSP/RegistroUsuario.jsp?mens=" + men);
                         } else if (place.equals("app")) {
-                            //Codigo de la app
+                            System.out.println("Campos vacios app registro");
+                            JSONObject jsonObject = new JSONObject();
+                            try {
+                                jsonObject.put("Registro", "Fallo");
+                                PrintWriter pw = response.getWriter();
+                                pw.write(jsonObject.toString());
+                                pw.print(jsonObject.toString());
+
+                                System.out.println("Registro fallo" + jsonObject.toString());
+
+                            } catch (JSONException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
                         }
                     }
                     //El numero de telefono no es telefono
@@ -181,7 +222,20 @@ public class Cliente extends HttpServlet {
 
                         //Respuesta en caso de que la app haya hecho la peticion    
                     } else if (place.equals("app")) {
-                        //Codigo que aun no he hecho xd
+                        System.out.println("Campos vacios app registro");
+                        JSONObject jsonObject = new JSONObject();
+                        try {
+                            jsonObject.put("Registro", "FalloN");
+                            PrintWriter pw = response.getWriter();
+                            pw.write(jsonObject.toString());
+                            pw.print(jsonObject.toString());
+
+                            System.out.println("Registro fallo telefono no es numero" + jsonObject.toString());
+
+                        } catch (JSONException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
                     }
                 }
 
@@ -195,7 +249,20 @@ public class Cliente extends HttpServlet {
                     response.sendRedirect("JSP/RegistroUsuario.jsp?mens=" + men);
                     //Respuesta en caso de que la app haya hecho la peticion    
                 } else if (place.equals("app")) {
-                    //Codigo que aun no he hecho xd
+                    System.out.println("Contrase;as distintas app registro");
+                    JSONObject jsonObject = new JSONObject();
+                    try {
+                        jsonObject.put("Registro", "FalloC");
+                        PrintWriter pw = response.getWriter();
+                        pw.write(jsonObject.toString());
+                        pw.print(jsonObject.toString());
+
+                        System.out.println("Registro contrase;as no coinciden" + jsonObject.toString());
+
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
 
                 }
             }
@@ -218,7 +285,20 @@ public class Cliente extends HttpServlet {
                 String men = "Llena todos los campos";
                 response.sendRedirect("JSP/SesionUsuario.jsp?mens=" + men);
             } else if (place.equals("app")) {
+                System.out.println("Campos vacios app login");
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("Login", "FalloV");
+                    PrintWriter pw = response.getWriter();
+                    pw.write(jsonObject.toString());
+                    pw.print(jsonObject.toString());
 
+                    System.out.println("Registro vacio" + jsonObject.toString());
+
+                } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         } else {
             Usuario usu = UsuarioBD.VerificarUsuario(correo);
@@ -234,28 +314,102 @@ public class Cliente extends HttpServlet {
 
                             response.sendRedirect("HTML/cliente/home.html");
                         } else if (place == "app") {
+                            System.out.println("Inicio Sesion Cliente");
+                            JSONObject jsonObject = new JSONObject();
+                            try {
+                                jsonObject.put("Login", "Cliente");
+                                PrintWriter pw = response.getWriter();
+                                pw.write(jsonObject.toString());
+                                pw.print(jsonObject.toString());
 
+                                System.out.println("Login cliente" + jsonObject.toString());
+
+                            } catch (JSONException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                             }
                         }
                     } else if (usu.getTip() == 2) {
                         if (place.equals("pag")) {
                             response.sendRedirect("HTML/empleado/home.html");
                         } else if (place == "app") {
+                            System.out.println("Inicio Sesion Empleado");
+                            JSONObject jsonObject = new JSONObject();
+                            try {
+                                jsonObject.put("Login", "Empleado");
+                                PrintWriter pw = response.getWriter();
+                                pw.write(jsonObject.toString());
+                                pw.print(jsonObject.toString());
 
+                                System.out.println("Login exitoso empleado" + jsonObject.toString());
+
+                            } catch (JSONException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
                         }
                     } else if (usu.getTip() == 1) {
                         if (place.equals("pag")) {
                             response.sendRedirect("HTML/encargado/home.html");
                         } else if (place == "app") {
+                            System.out.println("Inicio Sesion Encargado");
+                            JSONObject jsonObject = new JSONObject();
+                            try {
+                                jsonObject.put("Login", "Encargado");
+                                PrintWriter pw = response.getWriter();
+                                pw.write(jsonObject.toString());
+                                pw.print(jsonObject.toString());
 
+                                System.out.println("Login exitoso Encargado" + jsonObject.toString());
+
+                            } catch (JSONException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
                         }
                     }
                 } else {
-                    String error = "Contrase;a incorrecta";
-                    response.sendRedirect("JSP/SesionUsuario.jsp?mens=" + error);
+                    if (place == "pag") {
+                        String error = "Contrase;a incorrecta";
+                        response.sendRedirect("JSP/SesionUsuario.jsp?mens=" + error);
+                    } else if (place == "app") {
+                        System.out.println("Inicio Sesion contrase;a fail");
+                        JSONObject jsonObject = new JSONObject();
+                        try {
+                            jsonObject.put("Login", "Contra");
+                            PrintWriter pw = response.getWriter();
+                            pw.write(jsonObject.toString());
+                            pw.print(jsonObject.toString());
+
+                            System.out.println("Login fail, contra;a incorrecta" + jsonObject.toString());
+
+                        } catch (JSONException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
                 }
             } else {
-                String usua = "Usuario no encontrado";
-                response.sendRedirect("JSP/SesionUsuario.jsp?mens=" + usua);
+                if (place == "pag") {
+                    String usua = "Usuario no encontrado";
+                    response.sendRedirect("JSP/SesionUsuario.jsp?mens=" + usua);
+
+                } else if (place == "app") {
+                    System.out.println("Inicio Sesion usuario fail");
+                    JSONObject jsonObject = new JSONObject();
+                    try {
+                        jsonObject.put("Login", "Usuario");
+                        PrintWriter pw = response.getWriter();
+                        pw.write(jsonObject.toString());
+                        pw.print(jsonObject.toString());
+
+                        System.out.println("Login fail usuario" + jsonObject.toString());
+
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
             }
 
         }
@@ -348,13 +502,14 @@ public class Cliente extends HttpServlet {
         }
     }
 //Este metodo solo se ocupa en la app, ya que la consulta de los producto se hace en el jsp de Servicios
+
     private void productosDisponibles(HttpServletRequest request, HttpServletResponse response) {
         //UsuarioBD u = new UsuarioBD();
         ArrayList<Producto> pros = UsuarioBD.obtenerProductos();
-        
+
         //Respuesta por la peticion de la app, 
-        if(request.getParameter("place")=="app"){
-           //Enviar arraylist obtenida como json 
+        if (request.getParameter("place") == "app") {
+            //Enviar arraylist obtenida como json 
         }
     }
 }
