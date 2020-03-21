@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>IniciarSesion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Css/Estilos.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="https://file.myfontastic.com/mqb57Y99DoZRtKZYZ7jXPD/icons.css" rel="stylesheet">
+        <link rel="icon" href="Img/Techno-bit.png">
+    </head>
+    <body>
+
+        <header class="header">
+            <div class="contenedor">
+                <h1 class="logo">Can-Contento</h1>
+                <span class="icon-menu" id="btn-menu"></span>
+                <nav class="nav" id="nav">
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link" href="../index.html">Inicio</a></li>
+                        <li class="menu_item"><a class="menu__link select" href="SesionUsuario.html">Iniciar Sesion</a></li>
+                        <li class="menu__item"><a class="menu__link" href="RegistroUsuario.html">Registrarse</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <form action="..\Cliente" method="post">
+            <h1>Ingrese sus datos</h1>
+            <br><br><br>
+            <h3>Ingresa tu correo Electronico</h3>
+            <input type="text" name="corr_compara">            
+            <h3>Ingresa tu contraseña</h3>
+            <input type="password" name="contra_compara">
+            <br><br><br>
+            <input type="hidden" value="login" name="accion">
+            <input type="hidden" value="pag" name="place">
+            <input type="submit" value="Acceder">
+
+        </form>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Notificaciones</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="Css/Estilos.css">
+            <link rel="stylesheet" href="Css/notificaciones.css">
+            <link href="https://file.myfontastic.com/mqb57Y99DoZRtKZYZ7jXPD/icons.css" rel="stylesheet">
+            <link rel="icon" href="Img/Techno-bit.png">
+</head>
+<dib class="fondo">
+<body background="banner3.2.jpg">
+        <header class="header">
+		<div class="contenedor">
+		<h1 class="logo">Can-Contento</h1>
+		<span class="icon-menu" id="btn-menu"></span>
+		<nav class="nav" id="nav">
+		<ul class="menu">
+				<li class="menu__item"><a class="menu__link" href="moduloempleado.html">Regresar</a>
+					<ul class="submenu">
+		    			<li class="menu__item"><a class="menu__link" herf=""></a>   Perfil   </li> 
+						<li class="menu__item"><a class="menu__link" herf="">Notificar problema</a></li>
+					</ul>
+				</li>
+				<li class="menu__item"><a class="menu__link selected" href="">Notificaciones</a></li>
+				<li class="menu__item"><a class="menu__link" href="">                   </a></li>
+           		<li class="menu__item"><a class="menu__link" href="">                   </a></li>
+		</ul>
+		</nav>
+		</div>
+        </header>
+                
+        <form name="form1" id="form1" method="post" action="guargar.php" enctype="multipart/form-data">
+
+                <p>Asunto:</p>
+                <input type="text" class="field"> <br/>
+            
+                <p>Mensaje:</p>
+                <textarea class="field"></textarea> <br/>
+
+                <div class="form-group">
+                        <label class="col-sm-2 control-label">Archivos</label>
+                        <div class="col-sm-8">
+                        <input type="file" class="form-control" id="archivo[]" name="archivo[]" multiple="">
+                        </div>
+                </div>        
+
+                <p class="center-content">
+                    <input type="submit" class="btn btn-primary" value="Enviar Notificacion">
+                </p> 
+        </form>
+
+
+
+	
+</body>
+</dib>
+</html>

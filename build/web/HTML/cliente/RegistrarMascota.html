@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="header">
+    <div class="contenedor">
+        <h1 class="logo">Can-Contento</h1>
+        <span class="icon-menu" id="btn-menu"></span>
+        <nav class="nav" id="nav">
+        <ul class="menu">
+            <li class="menu__item"><a class="menu__link select" href="RegistrarMascota.html">Registrar mascota</a></li>
+            <li class="menu__item"><a class="menu__link" href="../../JSP/Servicios.jsp">Servicios</a></li>
+            <li class="menu__item"><a class="menu__link" href="">Mi perfil</a></li>
+            <li class="menu__item"><a class="menu__link" href="">Notificaciones</a></li>
+        </ul>
+        </nav>
+    </div>
+                <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                    style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                        style="stroke: none; fill: #fff;"></path>
+                </svg></div>
+
+    </header>
+        <form action='..\..\Cliente' method=post enctype="multipart/form-data">
+            <br><br><h3>Nombre</h3><input type=text name='nomp'><br>
+            <h3>Nacimiento (Una fecha aproximada)</h3>
+            <input type="date"  name="fecha">
+            <h3>Genero</h3>
+            <select name="generop">
+                <option>Macho</option>
+                <option>Hembra</option>
+                <option>Tren</option>
+            </select><br>
+            <h3>talla</h3>
+            <input type=text name='tallap'><br>
+            <h3>Foto</h3>
+            <input type="file" name="imagenp" accept="image/x-png,image/gif,image/jpeg"><br>
+            <br>
+            <input type="hidden" name="place" value="pag">
+            <input type="hidden" name="accion" value="registrarM">
+            <input type=submit value='Aceptar'>
+        </form>
+    </body>
+</html>

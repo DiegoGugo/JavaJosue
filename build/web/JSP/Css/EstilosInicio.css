@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+.Login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    box-sizing: border-box;
+    background: transparent;
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+    border-radius: 5px;
+    transition: .5s;
+}
+.Login:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+    background: rgba(255,255,255,1)
+}
+.transparente{
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    background: rgba(255,255,255,.1);
+    border-radius: 5px;
+    transition: .5s;
+}
+.transparente:hover{
+    transform: translate(20px,20px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+}
+.logo{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+h3{
+    margin: 0;
+    padding: 0;
+    color: #262626;
+    text-align: center;    
+}
+.Login input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.Login input[type="text"] , .Login input[type="password"]{
+    border: none;
+    border-bottom: 2px solid #262626;
+    outline: none;
+    height: 40px;
+    color: #262626;
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+} 
+::palceholder{
+    color: rgba(0,0,0,.5);
+}
+.datos{
+    position: relative; 
+}
+.datos span{
+    position: absolute;
+    top: 10px;
+    color: #262626;
+}
+.Login input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: #ed292a;
+    color: #fff;
+    border-radius: 20px;
+    cursor:pointer;
+}
+.Login a{
+    color: #262626;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+/*---------------------ESTILOS DEL HEADER---------------------*/
+
+.header{
+    height: 60px;
+}
+
+.header .contenedor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-menu{
+    margin: 5px;
+    color: cornsilk;
+}
+
+.icon-menu{
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: #5882FA;
+    color: cornsilk;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/*---------------------ESTILOS DEL MENU---------------------*/
+
+.nav{
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__link{
+    display: block;
+    padding: 15px;
+    background: #5882FA;
+    text-decoration: none;
+    color: rgb(5, 5, 4);
+}
+
+.menu__link:hover, .select{
+    background: rgb(17, 16, 16);
+    color: #5882FA;
+}
+
+.mostrar{
+    left: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    letter-spacing: 2.5px
+}
+
+.section__titulo{
+    text-align: center;
+    font-size: 40px;
+    color: #5882FA;
+}
+.textolog, .icon-menu{
+    margin: 5px;
+    color: rgb(12, 12, 12);
+}
+@media(min-width:480px){
+    .textolog{
+        font-size: 38px;
+    }
+}
+
+@media(min-width:480px){
+    .textolog{
+        font-size: 40px;
+    }
+    .banner__titulo{
+        font-size: 30px;
+    }
+    .banner__txt{
+        display: block;
+        font-size: 20px;
+    }
+    .info, .empresa{
+        display: flex;
+        justify-content: space-between;
+        margin-top: -230px;
+    }
+    .info__columna{
+        width: 19.5%;
+    }
+    .empresa{
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+    .section__titulo{
+        width: 100%;
+    }
+    .empresa__columna{
+        width: 49%;
+    }
+}
+
+@media(min-width:768px){
+    .banner__titulo{
+        font-size: 40px;
+    }
+    .empresa__titulo{
+        font-size: 30px;
+    }
+}
+
+@media(min-width:1024px){
+    .contenedor{
+         width:1300px;;
+    }
+    .nav{
+        position: static;
+        width: auto;
+    }
+    .menu{
+        display: flex
+    }
+    .menu__link{
+        background: none;
+        font-size: 20px;
+    }
+    .select{
+        background: rgb(236, 14, 88);
+        color: rgb(14, 13, 13);
+    }
+    .icon-menu{
+        display: none;
+    }
+    .banner__titulo{
+        font-size: 40px;
+    }
+    .info__titulo{
+        text-align: center;
+    }
+    .empresa__titulo{
+        font-size: 30px;
+    }
+}
+
+.contenedor{
+    margin: auto;
+    width: 99%;
+}

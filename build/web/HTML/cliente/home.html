@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Css/Estilos.css">
+    </head>
+    <body>
+        <script>
+            function registrar() {
+                window.location = 'home.html';
+            }
+            function servicio() {
+                window.location = '../../JSP/Servicios.jsp';
+
+            }
+            function citas() {
+                window.location = '../../JS/Sesion/Servicios.jsp';
+
+            }
+            function salir() {
+                window.location = "../../index.html";
+                alert("vuelve pronto");
+            }
+            function miPerfil() {
+                window.location = ""
+            }
+
+
+
+        </script>
+        <header class="header">
+            <div class="contenedor">
+                <h1 class="logo">Can-Contento</h1>
+                <span class="icon-menu" id="btn-menu"></span>
+                <nav class="nav" id="nav">
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link select" href="home.html">Home</a></li>
+                        <li class="menu__item"><a class="menu__link" href="../../JSP/cliente/Servicios.jsp">Servicios</a></li>
+                        <li class="menu__item"><a class="menu__link" href="../../JSP/cliente/Perfil.jsp">Mi perfil</a></li>
+                        <li class="menu__item"><a class="menu__link" href="../../JSP/cliente/Notificaciones.jsp">Notificaciones</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                                                                            style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #fff;"></path>
+                </svg></div>
+
+        </header>
+
+
+
+    </body>
+</html>

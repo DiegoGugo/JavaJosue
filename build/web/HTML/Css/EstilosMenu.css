@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.c1,.c2,.c3{
+    color: rgb(12, 12, 11);
+}
+
+.Ciudades{
+    width: 1300px;
+    
+    
+}
+
+.CDMX{
+    width: 400px;
+    float: left;
+    width: auto;
+    margin-top: 50px;
+}
+
+.MONTEREY{
+    width: 400px;
+    float: right;
+    width: auto;
+    margin-top: 50px;
+}
+
+.GUADALAJARA{
+    width: 400px;
+    float: right;
+    margin: 50px;
+}
+
+
+/*---------------------ESTILOS DEL HEADER---------------------*/
+
+.header{
+    height: 60px;
+}
+
+.header .contenedor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-menu{
+    margin: 5px;
+    color: rgba(0, 0, 0, 0.815);
+}
+
+.icon-menu{
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: rgb(173, 15, 15);
+    color: rgb(8, 8, 6);
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/*---------------------ESTILOS DEL MENU---------------------*/
+
+.nav{
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__link{
+    display: block;
+    padding: 15px;
+    background: rgb(196, 10, 10);
+    text-decoration: none;
+    color: rgb(14, 13, 11);
+}
+
+.menu__link:hover, .select{
+    background: rgb(14, 13, 13);
+    color: rgb(206, 35, 35);
+}
+
+.mostrar{
+    left: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    letter-spacing: 2.5px
+}
+
+.section__titulo{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(197, 19, 19);
+}
+.textolog, .icon-menu{
+    margin: 5px;
+    color: rgb(15, 13, 3);
+}
+@media(min-width:480px){
+    .textolog{
+        font-size: 38px;
+    }
+}
+
+@media(min-width:480px){
+    .textolog{
+        font-size: 40px;
+    }
+    .banner__titulo{
+        font-size: 30px;
+    }
+    .banner__txt{
+        display: block;
+        font-size: 20px;
+    }
+    .info, .empresa{
+        display: flex;
+        justify-content: space-between;
+        margin-top: -230px;
+    }
+    .info__columna{
+        width: 19.5%;
+    }
+    .empresa{
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+    .section__titulo{
+        width: 100%;
+    }
+    .empresa__columna{
+        width: 49%;
+    }
+}
+
+@media(min-width:768px){
+    .banner__titulo{
+        font-size: 40px;
+    }
+    .empresa__titulo{
+        font-size: 30px;
+    }
+}
+
+@media(min-width:1024px){
+    .contenedor{
+         width:1300px;;
+    }
+    .nav{
+        position: static;
+        width: auto;
+    }
+    .menu{
+        display: flex
+    }
+    .menu__link{
+        background: none;
+        font-size: 20px;
+    }
+    .select{
+        background: rgb(163, 11, 11);
+        color: rgb(15, 8, 8);
+    }
+    .icon-menu{
+        display: none;
+    }
+    .banner__titulo{
+        font-size: 40px;
+    }
+    .info__titulo{
+        text-align: center;
+    }
+    .empresa__titulo{
+        font-size: 30px;
+    }
+}
+
+.contenedor{
+    margin: auto;
+    width: 99%;
+}
+
+
