@@ -15,33 +15,32 @@ import java.io.InputStream;
  * @author jela3
  */
 public class Perro {
+    
+    int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     String nombre;
     String nac;
     boolean genero;
     String talla;
     int codigos;
     String dueno;
-   InputStream archivoimg;
+    String archivoimg;
 
-    public InputStream getArchivoimg() {
+    public String getArchivoimg() {
         return archivoimg;
     }
 
-    public void setArchivoimg(InputStream archivoimg) {
+    public void setArchivoimg(String archivoimg) {
         this.archivoimg = archivoimg;
     }
-
-    public FileInputStream getFis() {
-        return fis;
-    }
-
-    public void setFis(FileInputStream fis) {
-        this.fis = fis;
-    }
-    FileInputStream fis;
-
-   
+ 
 
     public String getNombre() {
         return nombre;

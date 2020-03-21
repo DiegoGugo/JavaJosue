@@ -15,7 +15,7 @@ public class Usuario {
     String ape;
     String dir;
     String cor;
-    int tel;
+    String tel;
     String con;
     int tip;
 
@@ -61,11 +61,11 @@ public class Usuario {
         this.cor = cor;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 

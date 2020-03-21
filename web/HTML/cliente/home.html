@@ -9,6 +9,7 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Css/Estilos.css">
     </head>
     <body>
         <script>
@@ -27,27 +28,34 @@ and open the template in the editor.
                 window.location = "../../index.html";
                 alert("vuelve pronto");
             }
-            function miPerfil(){
-                window.location=""
+            function miPerfil() {
+                window.location = ""
             }
-                
-                
-            
+
+
+
         </script>
-        <div>HOLIWIS KIWIS</div>
-        <h1>¿Que deseas hacer?</h1>
-        <header>
-            <input type='button' value="Registrar mascota" onClick='location.href="RegistrarMascota.html"'>
-            <br><br><br>
-            <input type='button' value="Servicios" onClick="location.href='../../JSP/Servicios.jsp'">
-            <br><br><br>
-            <input type='button' value="Mi perfil" onClick="miPerfil()">
-            <br><br><br>
-            <input type='button' value="Notificaciones" onClick="notifi()">
-            <br><br><br>
-            <a href="../../Cliente">Cerrar sesion</a><br>
+        <header class="header">
+            <div class="contenedor">
+                <h1 class="logo">Can-Contento</h1>
+                <span class="icon-menu" id="btn-menu"></span>
+                <nav class="nav" id="nav">
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link select" href="home.html">Home</a></li>
+                        <li class="menu__item"><a class="menu__link" href="../../JSP/cliente/Servicios.jsp">Servicios</a></li>
+                        <li class="menu__item"><a class="menu__link" href="../../JSP/cliente/Perfil.jsp">Mi perfil</a></li>
+                        <li class="menu__item"><a class="menu__link" href="../../JSP/cliente/Notificaciones.jsp">Notificaciones</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                                                                            style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #fff;"></path>
+                </svg></div>
+
         </header>
-        
+
 
 
     </body>

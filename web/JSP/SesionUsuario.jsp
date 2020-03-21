@@ -60,7 +60,7 @@
             <h3>Ingresa tu correo Electronico</h3>
             <input type="text" name="corr_compara">            
             <h3>Ingresa tu contraseña</h3>
-            <input type="text" name="contra_compara">
+            <input type="password" name="contra_compara">
             <br><br><br>
             <input type="hidden" value="login" name="accion">
             <input type="hidden" value="pag" name="place">
